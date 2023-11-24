@@ -1,5 +1,3 @@
-// FileName: App.js
-
 import React, { useState } from "react";
 import "./App.css";
 import * as math from "mathjs";
@@ -8,7 +6,7 @@ function App() {
   const [expression, setExpression] = useState("");
   const [screenVal, setScreenVal] = useState("");
   const [customVariables, setCustomVariables] = useState({});
-  // Default mode is "rad"
+  // Default mode: "rad"
   const [mode, setMode] = useState("rad");
 
   function handleChange(e) {
@@ -25,7 +23,7 @@ function App() {
         ...customVariables,
         pi: Math.PI,
         e: Math.E,
-        // Add factorial function
+        // Fattoriale
         fact: math.factorial,
         sin: mode === "rad" ? Math.sin : math.sin,
         cos: mode === "rad" ? Math.cos : math.cos,
@@ -89,9 +87,7 @@ function App() {
                 "asin(",
                 "acos(",
                 "atan(",
-                // Add open parenthesis
                 "(",
-                // Add close parenthesis
                 ")"
               ].map(input => (
                 <button key={input} onClick={() => handleClick(input)}>
